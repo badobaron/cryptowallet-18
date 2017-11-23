@@ -28,6 +28,19 @@ class ModifyWalletView(LoginRequiredMixin, View):
     def get(self, request, curr):
         wallet = Wallet.objects.get(currency=curr)
         return render(request, "wallet_modify.html", {"wallet": wallet})
+    def post(self, request, curr):
+        wallet = Wallet.objects.get(currency=curr)
+        if "dodaj" in request.POST:
+            wallet.amount += float(request.POST["amount"])
+            wallet.save()
+        else:
+            wallet.amount -= float(request.POST["amount"])
+            wallet.save()
+        balance_pln = UserBalance.objects.get(user=request.user).balance_pln
+        wallets = Wallet.objects.filter(user=request.user)
+        return render(request, "wallet_view.html", {"wallets": wallets, "balance_pln" : balance_pln})
+
+
 
 class DeleteWalletView(LoginRequiredMixin, View):
     def get(self, request, curr):
@@ -36,24 +49,7 @@ class DeleteWalletView(LoginRequiredMixin, View):
         wallets = Wallet.objects.filter(user=request.user)
         return render(request, "wallet_view.html",{"wallets": wallets})
 
-
 """
-class UserLoginView(View):
-    def get(self, request):
-        #form = UserLoginForm()
-        return render(request, 'login_view.html', locals())
-
-    def post(self,request):
-        #form = UserLoginForm(request.POST)
-        if form.is_valid():
-            u = authenticate(username=form.cleaned_data['username'],
-                             password=form.cleaned_data['password'])
-            if u is not None:
-                login(request, u)
-                return render(request, 'login_view.html', locals())
-            else:
-                return render(request, 'login_view.html', locals())
-
 class AddWalletView(CreateView):
     model = Wallet
     fields = ("currency","amount")

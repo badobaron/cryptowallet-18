@@ -4,8 +4,8 @@
     <h3>Stan PLN: {{ balance_pln }}</h3>
        <h3>Lista portfeli:</h3>
        {% for wallet in wallets %}
-           Waluta: {{ wallet.currency }} <a href="/delete/{{ wallet.currency }}">Usuń portfel</a>
-           Ilość: {{ wallet.amount }} <a href="/modify/{{ wallet.currency }}">Dodaj/odejmij walutę</a>
+           Waluta: {{ wallet.currency }} <button><a href="/delete/{{ wallet.currency }}">Usuń portfel</a></button>
+           Ilość: {{ wallet.amount }} <button><a href="/modify/{{ wallet.currency }}">Dodaj/odejmij walutę</a></button>
        </br>
        {% endfor %}
 {% endblock %}

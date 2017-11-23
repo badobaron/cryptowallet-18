@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
+    Modyfikujesz portfel {{ wallet.currency }}
+
 <form method="post">
+{% csrf_token %}
     Podaj kwotę: <input type="number" name="amount" min="0">
     </br>
     <input type="submit" name="dodaj" value="Dodaj">
