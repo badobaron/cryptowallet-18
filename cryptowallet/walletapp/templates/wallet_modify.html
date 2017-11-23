@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post">
+    Podaj kwotę: <input type="number" name="amount" min="0">
+    </br>
+    <input type="submit" name="dodaj" value="Dodaj">
+    <input type="submit" nam="odejmij" value="Odejmij">
+</form>
+{% endblock %}
