@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}WalletApp - Lista portfeli{% endblock %}
+{% block content %}
+    <h3>Stan PLN: {{ balance_pln }}</h3>
+       <h3>Lista portfeli:</h3>
+       {% for wallet in wallets %}
+           Waluta: {{ wallet.currency }} <a href="/delete/{{ wallet.currency }}">Usuń portfel</a>
+           Ilość: {{ wallet.amount }} <a href="/modify/{{ wallet.currency }}">Dodaj/odejmij walutę</a>
+       </br>
+       {% endfor %}
+{% endblock %}
+
+
+

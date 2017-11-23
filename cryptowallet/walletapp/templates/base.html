@@ -1,0 +1,21 @@
+<!doctype html>
+<html style="background-color: darkorange">
+    <head>
+          <title>{% block title %}Strona glówna{% endblock %}</title>
+        <meta charset="utf-8">
+    </head>
+
+<body>
+{% block content %}
+
+{% endblock %}
+
+{% block footer %}
+    <button><a href="/wallets">Zasil konto PLN</a></button>
+    <button><a href="/wallets">Kup/sprzedaj walutę za PLN</a></button>
+    <button><a href="/add_wallet">Dodaj walutę</a></button>
+    <button><a href="/wallets">Wyświetl portfele</a></button>
+
+{% endblock %}
+</body>
+</html>
