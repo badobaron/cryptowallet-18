@@ -8,19 +8,24 @@
     </head>
 
 <body>
+
+{% block header %}
+<h2>Cryptowallet v.0.0.1.7</h2>
+{% endblock %}
 {% block menu %}
 <div id="menu">
     <button><a href="/add_pln">Dodaj/odejmij PLN</a></button>
     <button><a href="/wallets">Kup/sprzedaj walutę za PLN</a></button>
     <button><a href="/add_wallet">Dodaj walutę</a></button>
     <button><a href="/wallets">Wyświetl portfele</a></button>
-    <br>
+    <br><br><br>
     <button><a href="/login">Zaloguj</a></button>
-    <button><a href="/logout">Logout</a></button>
+    <button><a href="/logout">Wyloguj</a></button>
+    <button><a href="/signup">Utwórz użytkownika</a></button>
 </div>
 {% endblock %}
 {% block content %}
-    <h2>Cryptowallet v.0.0.1.7</h2>
+
 {% endblock %}
 
 {% block footer %}
