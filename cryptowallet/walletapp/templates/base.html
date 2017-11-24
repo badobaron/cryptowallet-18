@@ -8,15 +8,22 @@
     </head>
 
 <body>
-{% block content %}
-
-{% endblock %}
-
-{% block footer %}
-    <button><a href="/wallets">Zasil konto PLN</a></button>
+{% block menu %}
+<div id="menu">
+    <button><a href="/add_pln">Dodaj/odejmij PLN</a></button>
     <button><a href="/wallets">Kup/sprzedaj walutę za PLN</a></button>
     <button><a href="/add_wallet">Dodaj walutę</a></button>
     <button><a href="/wallets">Wyświetl portfele</a></button>
+    <br>
+    <button><a href="/login">Zaloguj</a></button>
+    <button><a href="/logout">Logout</a></button>
+</div>
+{% endblock %}
+{% block content %}
+    <h2>Cryptowallet v.0.0.1.7</h2>
+{% endblock %}
+
+{% block footer %}
 
 {% endblock %}
 </body>

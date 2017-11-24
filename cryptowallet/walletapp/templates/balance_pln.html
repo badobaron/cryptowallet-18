@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    Modyfikujesz stan konta PLN
+
+<form method="post">
+{% csrf_token %}
+    Podaj kwotę: <input type="number" name="amount" min="0">
+    </br>
+    <input type="submit" name="dodaj" value="Dodaj">
+    <input type="submit" nam="odejmij" value="Odejmij">
+</form>
+{% endblock %}
