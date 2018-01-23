@@ -1,0 +1,12 @@
+body {
+    display: inline-block;
+    background-color: darksalmon;
+    width: 80%;
+    text-align: center;
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    font-size: 20px;
+}
+#menu {
+    display: inline-block;
+    width: 20%;
+}
