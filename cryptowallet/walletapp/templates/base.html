@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static "walletapp/style.css" %}">
+          <title>{% block title %}Strona glówna{% endblock %}</title>
+        <meta charset="utf-8">
+    </head>
+
+<body>
+
+{% block header %}
+<h2>Cryptowallet v.0.0.1.7</h2>
+{% endblock %}
+{% block menu %}
+<div id="menu">
+    <button><a href="/add_pln">Dodaj/odejmij PLN</a></button>
+    <button><a href="/wallets">Kup/sprzedaj walutę za PLN</a></button>
+    <button><a href="/add_wallet">Dodaj walutę</a></button>
+    <button><a href="/wallets">Wyświetl portfele</a></button>
+    <br><br><br>
+    <button><a href="/login">Zaloguj</a></button>
+    <button><a href="/logout">Wyloguj</a></button>
+    <button><a href="/signup">Utwórz użytkownika</a></button>
+</div>
+{% endblock %}
+{% block content %}
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
+</body>
+</html>
